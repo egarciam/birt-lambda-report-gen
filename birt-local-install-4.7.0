@@ -1,0 +1,8 @@
+#!/bin/sh
+POM=$(./make-pom-4.7.0)
+BIRTLIB=$HOME/projects/birt-runtime-4.7.0-20170614/ReportEngine/lib
+REPO=/home/nexus/sonatype-work/nexus/storage/m2-releases/com/innoventsolutions/birt/runtime
+mkdir -p $REPO
+INSTALL=$HOME/projects/birt-local-gen/birt-local-install-file
+find $BIRTLIB -name "*.jar" -exec "$INSTALL" "4.7.0" "{}" "$POM" \;
+
